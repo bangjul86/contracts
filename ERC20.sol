@@ -2,8 +2,13 @@
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract ERC20Stakeable is ERC20 {
-    // Staker info
+contract StakingBooster is ERC20, Ownable {
+    constructor(string memory _name, string memory _symbol)
+        ERC20(_name, _symbol)
+    {
+        _mint(msg.sender, 100 * 10**decimals());
+    }
+
     struct Staker {
         // The deposited tokens of the Staker
         uint256 deposited;
