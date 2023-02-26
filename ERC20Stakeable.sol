@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract ERC20Stakeable is ERC20, ERC20Burnable, ReentrancyGuard {
+contract ERC20Stakeable is ERC20 {
     // Staker info
     struct Staker {
         // The deposited tokens of the Staker
